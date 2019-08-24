@@ -2,7 +2,7 @@
     "name": "alexey/php-project-lvl1",
     "bin": [
 		"./brain-games"
-	   ]
+	   ],
     "authors": [
         {
             "name": "AlexeyDanilov",
