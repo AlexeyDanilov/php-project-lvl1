@@ -1,0 +1,13 @@
+{
+    "name": "alexey/php-project-lvl1",
+    "bin": [
+		"./brain-games"
+	   ]
+    "authors": [
+        {
+            "name": "AlexeyDanilov",
+            "email": "al.s.danilov@gmail.com"
+        }
+    ],
+    "require": {}
+}
