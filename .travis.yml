@@ -1,2 +1,5 @@
 language: php
-script: make lint
+php:
+  - '7.2'
+
+script: make lint test
