@@ -1,7 +1,8 @@
 {
     "name": "alexey/php-project-lvl1",
     "bin": [
-		"bin/brain-games"
+		"bin/brain-games",
+        "bin/brain-even"
 	   ],
     "authors": [
         {
