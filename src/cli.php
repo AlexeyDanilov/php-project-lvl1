@@ -37,6 +37,10 @@ function even()
             line("'yes' is wrong answer ;(. Correct answer was 'no'.
                 Let's try again, {$name}!");
             break;
+        } elseif ($answer !== 'yes' || $answer !== 'no') {
+            line("'{$answer}' is wrong answer ;(.
+                Let's ty again, {$name}!");
+            break;
         }
     }
     if ($count === 3) {
