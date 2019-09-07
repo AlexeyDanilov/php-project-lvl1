@@ -11,6 +11,6 @@ else{
     require_once $path2;
 }
 
-use function BrainGames\Cli\even;
+use function BrainGames\Even\even;
 
 even();

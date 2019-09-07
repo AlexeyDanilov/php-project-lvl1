@@ -15,7 +15,9 @@
     "minimum stability": "dev",
        "autoload": {
     "files":[
-		"src/cli.php"
+		"src/cli.php",
+        "src/even.php",
+        "src/calc.php"
 	    ]
   },
     "require": {
