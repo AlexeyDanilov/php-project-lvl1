@@ -4,7 +4,7 @@ namespace BrainGames\Calc;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Cli\run;
+use function BrainGames\Cli\hello;
 
 function result($v1, $v2, $act)
 {
@@ -27,7 +27,7 @@ function calc()
     $val2 = 0;
     $count = 0;
 
-    $name = run('What is the result of the expression?');
+    $name = hello('What is the result of the expression?');
 
     while ($count < 3) {
         $val1 = rand(1, 10);
@@ -43,7 +43,13 @@ function calc()
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$res}'.
                 Let's try again, {$name}!");
-            return;
+            break;
         }
+    }
+
+    if ($count === 3) {
+        line("Congratulations, {$name}!");
+    } else {
+        return;
     }
 }

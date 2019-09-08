@@ -4,11 +4,11 @@ namespace BrainGames\Even;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Cli\run;
+use function BrainGames\Cli\hello;
 
 function even()
 {
-    $name = run("Answer \"yes\" if the number is even, otherwise answer \"no\".");
+    $name = hello("Answer \"yes\" if the number is even, otherwise answer \"no\".");
 
     $count = 0;
     while ($count < 3) {

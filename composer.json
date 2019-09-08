@@ -14,9 +14,10 @@
     "minimum stability": "dev",
        "autoload": {
     "files":[
+        "src/run.php",
 		"src/cli.php",
-        "src/even.php",
-        "src/calc.php"
+        "src/games/even.php",
+        "src/games/calc.php"
 	    ]
   },
     "require": {

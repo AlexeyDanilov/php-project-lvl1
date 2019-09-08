@@ -6,7 +6,7 @@ use function \cli\line;
 use function \cli\prompt;
 
 
-function run($text)
+function hello($text)
 {
     line("Welcome to the Brain Games!\n
     $text");
