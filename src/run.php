@@ -4,6 +4,7 @@ namespace BrainGames\run;
 
 use function BrainGames\Calc\calc;
 use function BrainGames\Even\even;
+use function BrainGames\Gcd\gcd;
 
 function run($func)
 {
@@ -14,6 +15,10 @@ function run($func)
 
         case 'even':
             even();
+            break;
+
+        case 'gcd':
+            gcd();
             break;
     }
 }

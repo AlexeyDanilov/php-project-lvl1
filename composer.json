@@ -2,7 +2,8 @@
     "name": "alexey/php-project-lvl1",
     "bin": [
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
 	   ],
     "authors": [
         {
@@ -17,7 +18,8 @@
         "src/run.php",
 		"src/cli.php",
         "src/games/even.php",
-        "src/games/calc.php"
+        "src/games/calc.php",
+        "src/games/gcd.php"
 	    ]
   },
     "require": {
