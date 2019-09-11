@@ -1,5 +1,6 @@
 {
     "name": "alexey/php-project-lvl1",
+    "type": "object",
     "bin": [
         "bin/brain-even",
         "bin/brain-calc",
@@ -13,7 +14,9 @@
             "email": "al.s.danilov@gmail.com"
         }
     ],
-   "scripts":{"phpcs": "phpcs"},
+    "description": "console games",
+    "keywords": ["hexlet", "games", "brain-games"],
+    "scripts":{"phpcs": "phpcs"},
     "minimum stability": "dev",
        "autoload": {
     "files":[
