@@ -25,7 +25,7 @@ function progression()
     while ($count < 3) {
         $arr = details();
         $arr2 = $arr;
-        $question = rand(1, 10);
+        $question = rand(0, 9);
         $arr2[$question] = '..';
         $str = implode(' ', $arr2);
 
