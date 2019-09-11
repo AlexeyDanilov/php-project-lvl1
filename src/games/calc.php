@@ -43,13 +43,11 @@ function calc()
         } else {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$res}'.
                 Let's try again, {$name}!");
-            break;
+            return;
         }
     }
 
     if ($count === 3) {
         line("Congratulations, {$name}!");
-    } else {
-        return;
     }
 }

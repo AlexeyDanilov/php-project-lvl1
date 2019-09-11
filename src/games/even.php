@@ -23,20 +23,18 @@ function even()
         } elseif ($num % 2 === 0 && $answer === 'no') {
             line("'no' is wrong answer ;(. Correct answer was 'yes'.
                 Let's try again, {$name}!");
-            break;
+            return;
         } elseif ($num % 2 !== 0 && $answer === 'yes') {
             line("'yes' is wrong answer ;(. Correct answer was 'no'.
                 Let's try again, {$name}!");
-            break;
+            return;
         } elseif ($answer !== 'yes' || $answer !== 'no') {
             line("'{$answer}' is wrong answer ;(.
                 Let's ty again, {$name}!");
-            break;
+            return;
         }
     }
     if ($count === 3) {
         line("Congratulations, {$name}!");
-    } else {
-        return;
     }
 }
