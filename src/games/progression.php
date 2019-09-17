@@ -2,9 +2,6 @@
 
 namespace BrainGames\Progression;
 
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Cli\hello;
 
 function details()
 {
@@ -20,27 +17,31 @@ function details()
 
 function progression()
 {
-    $name = hello("What number is missing in the progression?");
-    $count = 0;
-    while ($count < 3) {
-        $arr = details();
-        $arr2 = $arr;
-        $question = rand(0, 9);
-        $arr2[$question] = '..';
-        $str = implode(' ', $arr2);
+    $text = "What number is missing in the progression?";
 
-        line("Question: {$str}");
-        $answer = (int) prompt('Your answer');
-        if ($answer === $arr[$question]) {
-            line('Correct');
-            $count++;
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$arr[$question]}'.
-                Let's try again, {$name}!");
-            break;
-        }
-    }
-    if ($count === 3) {
-        line("Congratulations, {$name}!");
-    }
+    //Формирование прогрессии для 3-х вопросов
+    $parameters1 = details();
+    $parametersDouble1 = $parameters1;
+    $question1 = rand(0, 9);
+    $parametersDouble1[$question1] = '..';
+    $str1 = implode(' ', $parametersDouble1);
+
+    $parameters2 = details();
+    $parametersDouble2 = $parameters2;
+    $question2 = rand(0, 9);
+    $parametersDouble2[$question2] = '..';
+    $str2 = implode(' ', $parametersDouble2);
+
+    $parameters3 = details();
+    $parametersDouble3 = $parameters3;
+    $question3 = rand(0, 9);
+    $parametersDouble3[$question3] = '..';
+    $str3 = implode(' ', $parametersDouble3);
+
+    //Запись в массив вопросов и правильных ответов
+    $allParameters = [$str1, $str2, $str3];
+    $allTruthVal = [$parameters1[$question1], $parameters2[$question2], $parameters3[$question3]];
+
+    //вызов движка приложения с переданными параметрами
+    engine($text, $allParameters, $allTruthVal);
 }

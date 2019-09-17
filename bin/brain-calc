@@ -2,6 +2,8 @@
 
 <?php
 
+use function BrainGames\Calc\calc;
+
 $path1 = __DIR__ . '/../vendor/autoload.php';
 $path2 = __DIR__ . '/../../../autoload.php';
 
@@ -12,6 +14,5 @@ else{
     require_once $path2;
 }
 
-use function BrainGames\Run\run;
 
-run('calc');
+calc();

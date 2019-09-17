@@ -20,34 +20,46 @@ function result($v1, $v2, $act)
     }
 }
 
-function calc()
+
+function calc ()
 {
+    $text = "What is the result of the expression?";
     $action = ['+', '-', '*'];
-    $val1 = 0;
-    $val2 = 0;
-    $count = 0;
 
-    $name = hello('What is the result of the expression?');
+    //Выбор адействия для 3-х вопросов
+    $indexAction1 =  array_rand($action, 1);
+    $act1 = $action[$indexAction1];
 
-    while ($count < 3) {
-        $val1 = rand(1, 10);
-        $val2 = rand(1, 10);
-        $indexAction =  array_rand($action, 1);
-        $act = $action[$indexAction];
-        $res = result($val1, $val2, $action[$indexAction]);
-        line("Question: {$val1} {$act} {$val2}");
-        $answer = (int) prompt("Your answer");
-        if ($answer === $res) {
-            line('Correct!');
-            $count++;
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$res}'.
-                Let's try again, {$name}!");
-            return;
-        }
-    }
+    $indexAction2 =  array_rand($action, 1);
+    $act2 = $action[$indexAction2];
 
-    if ($count === 3) {
-        line("Congratulations, {$name}!");
-    }
+    $indexAction3 =  array_rand($action, 1);
+    $act3 = $action[$indexAction3];
+
+    //Выбор переменных для 3-х вопросов
+    $val1_1 = rand(1, 10);
+    $val1_2 = rand(1, 10);
+
+    $val2_1 = rand(1, 10);
+    $val2_2 = rand(1, 10);
+
+    $val3_1 = rand(1, 10);
+    $val3_2 = rand(1, 10);
+
+    //Вопросы
+    $task1 = "{$val1_1} {$act1} {$val1_2}";
+    $task2 = "{$val2_1} {$act2} {$val2_2}";
+    $task3 = "{$val3_1} {$act3} {$val3_2}";
+
+    //Правильные ответы
+    $res1 = result($val1_1, $val1_2, $action[$indexAction1]);
+    $res2 = result($val2_1, $val2_2, $action[$indexAction2]);
+    $res3 = result($val3_1, $val3_2, $action[$indexAction3]);
+
+    //Запись в массив вопросов и правильных ответов
+    $allParameters = [$task1, $task2, $task3];
+    $allTruthVal = [$res1, $res2, $res3];
+
+    //вызов движка приложения с переданными параметрами
+    engine($text, $allParameters, $allTruthVal);
 }
