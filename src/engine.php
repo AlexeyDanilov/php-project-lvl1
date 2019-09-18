@@ -13,8 +13,8 @@ function engine($text, array $question, array $truthVal)
     $i = 0;
     while ($count < 3) {
         line("Question: {$question[$i]}");
-        $answer = (int)prompt('Your answer');
-        if ($answer === $truthVal[$i]) {
+        $answer = prompt('Your answer');
+        if ($answer == $truthVal[$i]) {
             line('Correct');
             $count++;
         } else {

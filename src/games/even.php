@@ -2,39 +2,39 @@
 
 namespace BrainGames\Even;
 
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Cli\hello;
 
 function even()
 {
-    $name = hello("Answer \"yes\" if the number is even, otherwise answer \"no\".");
+    $text = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
-    $count = 0;
-    while ($count < 3) {
-        $num = rand(1, 100);
-        $answer = prompt("Question: {$num}");
-        if ($num % 2 === 0 && $answer === 'yes') {
-            line("Correct!");
-            $count++;
-        } elseif ($num % 2 !== 0 && $answer === 'no') {
-            line("Correct!");
-            $count++;
-        } elseif ($num % 2 === 0 && $answer === 'no') {
-            line("'no' is wrong answer ;(. Correct answer was 'yes'.
-                Let's try again, {$name}!");
-            return;
-        } elseif ($num % 2 !== 0 && $answer === 'yes') {
-            line("'yes' is wrong answer ;(. Correct answer was 'no'.
-                Let's try again, {$name}!");
-            return;
-        } elseif ($answer !== 'yes' || $answer !== 'no') {
-            line("'{$answer}' is wrong answer ;(.
-                Let's ty again, {$name}!");
-            return;
-        }
+    //Выбор переменных для 3-х вопросов (вопросы)
+    $num1 = rand(1, 100);
+    $num2 = rand(1, 100);
+    $num3 = rand(1, 100);
+
+    if ($num1 % 2 === 0) {
+        $val1 = 'yes';
+    } else {
+        $val1 = 'no';
     }
-    if ($count === 3) {
-        line("Congratulations, {$name}!");
+
+    if ($num2 % 2 === 0) {
+        $val2 = 'yes';
+    } else {
+        $val2 = 'no';
     }
+
+    if ($num3 % 2 === 0) {
+        $val3 = 'yes';
+    } else {
+        $val3 = 'no';
+    }
+
+    //записываем вопросы и ответы в массив
+    $allParameters = [$num1, $num2, $num3];
+    $allTruthVal = [$val1, $val2, $val3];
+
+
+    //вызов движка приложения с переданными параметрами
+    engine($text, $allParameters, $allTruthVal);
 }

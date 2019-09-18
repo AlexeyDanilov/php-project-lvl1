@@ -2,9 +2,6 @@
 
 namespace BrainGames\Prime;
 
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Cli\hello;
 
 function value_info($val)
 {
@@ -20,26 +17,25 @@ function value_info($val)
     return 'yes';
 }
 
+
 function prime()
 {
-    $name = hello("Answer \"yes\" if given number is prime. Otherwise answer \"no\".");
-    $count = 0;
-    while ($count < 3) {
-        $val = rand(1, 50);
-        $res = value_info($val);
-        line("Question: {$val}");
-        $answer = prompt('Your answer');
-        if ($answer === $res) {
-            line('Correct');
-            $count++;
-        } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$res}'.
-                Let's try again, {$name}!");
-            return;
-        }
-    }
+    $text = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 
-    if ($count === 3) {
-        line("Congratulations, {$name}!");
-    }
+    //Выбор значений для вопросов
+    $val1 = rand(1, 50);
+    $val2 = rand(1, 50);
+    $val3 = rand(1, 50);
+
+    //Правильные ответы на вопросы
+    $res1 = value_info($val1);
+    $res2 = value_info($val2);
+    $res3 = value_info($val3);
+
+    //Запись в массив вопросов и правильных ответов
+    $allParameters = [$val1, $val2, $val3];
+    $allTruthVal = [$res1, $res2, $res3];
+
+    //вызов движка приложения с переданными параметрами
+    engine($text, $allParameters, $allTruthVal);
 }

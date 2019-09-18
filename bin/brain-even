@@ -2,7 +2,7 @@
 
 <?php
 
-use function BrainGames\Run\run;
+use function BrainGames\Even\even;
 
 $path1 = __DIR__ . '/../vendor/autoload.php';
 $path2 = __DIR__ . '/../../../autoload.php';
@@ -15,4 +15,4 @@ else{
 }
 
 
-run('even');
+even();

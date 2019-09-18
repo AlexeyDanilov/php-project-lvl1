@@ -2,10 +2,6 @@
 
 namespace BrainGames\Calc;
 
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Cli\hello;
-
 function result($v1, $v2, $act)
 {
     switch ($act) {
@@ -21,7 +17,7 @@ function result($v1, $v2, $act)
 }
 
 
-function calc ()
+function calc()
 {
     $text = "What is the result of the expression?";
     $action = ['+', '-', '*'];
