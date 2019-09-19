@@ -2,7 +2,7 @@
 
 namespace BrainGames\Calc;
 
-function result($v1, $v2, $act)
+function getResult($v1, $v2, $act)
 {
     switch ($act) {
         case '+':
@@ -48,9 +48,9 @@ function calc()
     $task3 = "{$val3_1} {$act3} {$val3_2}";
 
     //Правильные ответы
-    $res1 = result($val1_1, $val1_2, $action[$indexAction1]);
-    $res2 = result($val2_1, $val2_2, $action[$indexAction2]);
-    $res3 = result($val3_1, $val3_2, $action[$indexAction3]);
+    $res1 = getResult($val1_1, $val1_2, $action[$indexAction1]);
+    $res2 = getResult($val2_1, $val2_2, $action[$indexAction2]);
+    $res3 = getResult($val3_1, $val3_2, $action[$indexAction3]);
 
     //Запись в массив вопросов и правильных ответов
     $allParameters = [$task1, $task2, $task3];

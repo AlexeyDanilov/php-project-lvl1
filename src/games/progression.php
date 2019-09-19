@@ -3,16 +3,16 @@
 namespace BrainGames\Progression;
 
 
-function details()
+function getDetails()
 {
     $step = rand(1, 10);
     $firstVal = rand(1, 100);
     $count = 10;
-    $arr = [];
+    $values = [];
     for ($i = 0, $j = $firstVal; $i < $count; $i++, $j += $step) {
-        $arr[$i] = $j;
+        $values[$i] = $j;
     }
-    return $arr;
+    return $values;
 }
 
 function progression()
@@ -20,19 +20,19 @@ function progression()
     $text = "What number is missing in the progression?";
 
     //Формирование прогрессии для 3-х вопросов
-    $parameters1 = details();
+    $parameters1 = getDetails();
     $parametersDouble1 = $parameters1;
     $question1 = rand(0, 9);
     $parametersDouble1[$question1] = '..';
     $str1 = implode(' ', $parametersDouble1);
 
-    $parameters2 = details();
+    $parameters2 = getDetails();
     $parametersDouble2 = $parameters2;
     $question2 = rand(0, 9);
     $parametersDouble2[$question2] = '..';
     $str2 = implode(' ', $parametersDouble2);
 
-    $parameters3 = details();
+    $parameters3 = getDetails();
     $parametersDouble3 = $parameters3;
     $question3 = rand(0, 9);
     $parametersDouble3[$question3] = '..';

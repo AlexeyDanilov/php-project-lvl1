@@ -3,7 +3,7 @@
 namespace BrainGames\Prime;
 
 
-function value_info($val)
+function get_value_info($val)
 {
     if ($val < 2) {
         return 'no';
@@ -28,9 +28,9 @@ function prime()
     $val3 = rand(1, 50);
 
     //Правильные ответы на вопросы
-    $res1 = value_info($val1);
-    $res2 = value_info($val2);
-    $res3 = value_info($val3);
+    $res1 = get_value_info($val1);
+    $res2 = get_value_info($val2);
+    $res3 = get_value_info($val3);
 
     //Запись в массив вопросов и правильных ответов
     $allParameters = [$val1, $val2, $val3];
