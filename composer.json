@@ -15,10 +15,13 @@
         }
     ],
     "description": "console games",
-    "keywords": ["hexlet", "games", "brain-games"],
+    "keywords": [
+                 "hexlet",
+                 "games",
+                 "brain-games"
+                ],
     "scripts":{"phpcs": "phpcs"},
-    "minimum stability": "dev",
-       "autoload": {
+    "autoload": {
     "files":[
             "src/cli.php",
             "src/games/even.php",

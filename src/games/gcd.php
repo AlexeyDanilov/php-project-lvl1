@@ -2,6 +2,7 @@
 
 namespace BrainGames\Gcd;
 
+const DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
 function calculation($val1, $val2)
 {
@@ -14,10 +15,8 @@ function calculation($val1, $val2)
 }
 
 
-function gcd()
+function get_gcd()
 {
-    $text = "Find the greatest common divisor of given numbers.";
-
     //Выбор переменных для 3-х вопросов
     $val1_1 = rand(1, 100);
     $val1_2 = rand(1, 100);
@@ -43,5 +42,5 @@ function gcd()
     $allTruthVal = [$res1, $res2, $res3];
 
     //вызов движка приложения с переданными параметрами
-    engine($text, $allParameters, $allTruthVal);
+    engine(DESCRIPTION , $allParameters, $allTruthVal);
 }

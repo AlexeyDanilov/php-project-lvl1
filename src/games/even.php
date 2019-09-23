@@ -2,39 +2,19 @@
 
 namespace BrainGames\Even;
 
+const DESCRIPTION = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
 function even()
 {
-    $text = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
-
-    //Выбор переменных для 3-х вопросов (вопросы)
-    $num1 = rand(1, 100);
-    $num2 = rand(1, 100);
-    $num3 = rand(1, 100);
-
-    if ($num1 % 2 === 0) {
-        $val1 = 'yes';
-    } else {
-        $val1 = 'no';
-    }
-
-    if ($num2 % 2 === 0) {
-        $val2 = 'yes';
-    } else {
-        $val2 = 'no';
-    }
-
-    if ($num3 % 2 === 0) {
-        $val3 = 'yes';
-    } else {
-        $val3 = 'no';
-    }
-
     //записываем вопросы и ответы в массив
-    $allParameters = [$num1, $num2, $num3];
-    $allTruthVal = [$val1, $val2, $val3];
-
+    $countQuestions = 3;
+    $allParameters = [];
+    $allTruthVal = [];
+    for ($i = 0; $i < $countQuestions; $i++) {
+        $allParameters[$i] = rand(1, 100);
+        $allTruthVal[$i] = ($allParameters[$i] % 2) === 0 ? 'yes' : 'no';
+    }
 
     //вызов движка приложения с переданными параметрами
-    engine($text, $allParameters, $allTruthVal);
+    engine(DESCRIPTION, $allParameters, $allTruthVal);
 }

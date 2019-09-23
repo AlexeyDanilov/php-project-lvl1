@@ -2,24 +2,25 @@
 
 namespace BrainGames\Calc;
 
-function getResult($v1, $v2, $act)
+const DESCRIPTION = "What is the result of the expression?";
+
+function getResult($value1, $value2, $action)
 {
-    switch ($act) {
+    switch ($action) {
         case '+':
-            return $v1 + $v2;
+            return $value1 + $value2;
 
         case '-':
-            return $v1 - $v2;
+            return $value1 - $value2;
 
         case '*':
-            return $v1 * $v2;
+            return $value1 * $value2;
     }
 }
 
 
 function calc()
 {
-    $text = "What is the result of the expression?";
     $action = ['+', '-', '*'];
 
     //Выбор адействия для 3-х вопросов
@@ -57,5 +58,5 @@ function calc()
     $allTruthVal = [$res1, $res2, $res3];
 
     //вызов движка приложения с переданными параметрами
-    engine($text, $allParameters, $allTruthVal);
+    engine(DESCRIPTION, $allParameters, $allTruthVal);
 }

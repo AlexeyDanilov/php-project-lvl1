@@ -2,6 +2,7 @@
 
 namespace BrainGames\Progression;
 
+const DESCRIPTION = "What number is missing in the progression?";
 
 function getDetails()
 {
@@ -17,8 +18,6 @@ function getDetails()
 
 function progression()
 {
-    $text = "What number is missing in the progression?";
-
     //Формирование прогрессии для 3-х вопросов
     $parameters1 = getDetails();
     $parametersDouble1 = $parameters1;
@@ -43,5 +42,5 @@ function progression()
     $allTruthVal = [$parameters1[$question1], $parameters2[$question2], $parameters3[$question3]];
 
     //вызов движка приложения с переданными параметрами
-    engine($text, $allParameters, $allTruthVal);
+    engine(DESCRIPTION , $allParameters, $allTruthVal);
 }
