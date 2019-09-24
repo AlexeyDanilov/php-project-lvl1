@@ -1,17 +1,20 @@
 <?php
 
-use function BrainGames\Cli\hello;
 use function cli\line;
 use function cli\prompt;
 
 
 
-function engine($text, array $question, array $truthVal)
+function engine($description, array $question, array $truthVal)
 {
-    $name = hello($text);
+    line("Welcome to the Brain Games!\n");
+    line("$description");
+    $name = prompt('May I have your name?');
+    line("Hello,%s", $name);
+    $roundsGame = 3;
     $count = 0;
     $i = 0;
-    while ($count < 3) {
+    while ($count < $roundsGame) {
         line("Question: {$question[$i]}");
         $answer = prompt('Your answer');
         if ($answer == $truthVal[$i]) {
@@ -24,7 +27,7 @@ function engine($text, array $question, array $truthVal)
         }
         $i++;
     }
-    if ($count === 3) {
+    if ($count === $roundsGame) {
         line("Congratulations, {$name}!");
     }
 }

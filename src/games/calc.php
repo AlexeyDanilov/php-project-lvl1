@@ -22,40 +22,17 @@ function getResult($value1, $value2, $action)
 function calc()
 {
     $action = ['+', '-', '*'];
-
-    //Выбор адействия для 3-х вопросов
-    $indexAction1 =  array_rand($action, 1);
-    $act1 = $action[$indexAction1];
-
-    $indexAction2 =  array_rand($action, 1);
-    $act2 = $action[$indexAction2];
-
-    $indexAction3 =  array_rand($action, 1);
-    $act3 = $action[$indexAction3];
-
-    //Выбор переменных для 3-х вопросов
-    $val1_1 = rand(1, 10);
-    $val1_2 = rand(1, 10);
-
-    $val2_1 = rand(1, 10);
-    $val2_2 = rand(1, 10);
-
-    $val3_1 = rand(1, 10);
-    $val3_2 = rand(1, 10);
-
-    //Вопросы
-    $task1 = "{$val1_1} {$act1} {$val1_2}";
-    $task2 = "{$val2_1} {$act2} {$val2_2}";
-    $task3 = "{$val3_1} {$act3} {$val3_2}";
-
-    //Правильные ответы
-    $res1 = getResult($val1_1, $val1_2, $action[$indexAction1]);
-    $res2 = getResult($val2_1, $val2_2, $action[$indexAction2]);
-    $res3 = getResult($val3_1, $val3_2, $action[$indexAction3]);
-
-    //Запись в массив вопросов и правильных ответов
-    $allParameters = [$task1, $task2, $task3];
-    $allTruthVal = [$res1, $res2, $res3];
+    $countQuestions = 3;
+    $allParameters = []; // Массив для записи в него вопросов
+    $allTruthVal = []; // Массив для записи в него правильных ответов
+    for ($i = 0; $i < $countQuestions; $i++) {
+        $indexAction =  array_rand((array)$action, 1); // ищем индекс массива действий
+        $actionSymbol = $action[$indexAction]; // получаем сам знак
+        $value1 = rand(1, 10); // определяем первое значение
+        $value2 = rand(1, 10); // определяем второе значение
+        $allParameters[$i] = "{$value1} {$actionSymbol} {$value2}"; // записываем вопрос в массив
+        $allTruthVal[$i] = getResult($value1, $value2, $actionSymbol); // записываем ответ в массив
+    }
 
     //вызов движка приложения с переданными параметрами
     engine(DESCRIPTION, $allParameters, $allTruthVal);

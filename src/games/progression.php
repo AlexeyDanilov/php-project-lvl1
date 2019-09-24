@@ -18,29 +18,18 @@ function getDetails()
 
 function progression()
 {
-    //Формирование прогрессии для 3-х вопросов
-    $parameters1 = getDetails();
-    $parametersDouble1 = $parameters1;
-    $question1 = rand(0, 9);
-    $parametersDouble1[$question1] = '..';
-    $str1 = implode(' ', $parametersDouble1);
-
-    $parameters2 = getDetails();
-    $parametersDouble2 = $parameters2;
-    $question2 = rand(0, 9);
-    $parametersDouble2[$question2] = '..';
-    $str2 = implode(' ', $parametersDouble2);
-
-    $parameters3 = getDetails();
-    $parametersDouble3 = $parameters3;
-    $question3 = rand(0, 9);
-    $parametersDouble3[$question3] = '..';
-    $str3 = implode(' ', $parametersDouble3);
-
-    //Запись в массив вопросов и правильных ответов
-    $allParameters = [$str1, $str2, $str3];
-    $allTruthVal = [$parameters1[$question1], $parameters2[$question2], $parameters3[$question3]];
+    $countQuestions = 3;
+    $allParameters = []; // Массив для записи в него вопросов
+    $allTruthVal = []; // Массив для записи в него правильных ответов
+    for ($i = 0; $i < $countQuestions; $i++) {
+        $parameters = getDetails();
+        $parametersDouble = $parameters;
+        $question = rand(0, 9);
+        $parametersDouble[$question] = '..';
+        $allParameters[$i] = implode(' ', $parametersDouble);
+        $allTruthVal[$i] = $parameters[$question];
+    }
 
     //вызов движка приложения с переданными параметрами
-    engine(DESCRIPTION , $allParameters, $allTruthVal);
+    engine(DESCRIPTION, $allParameters, $allTruthVal);
 }

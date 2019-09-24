@@ -23,7 +23,6 @@
     "scripts":{"phpcs": "phpcs"},
     "autoload": {
     "files":[
-            "src/cli.php",
             "src/games/even.php",
             "src/games/calc.php",
             "src/games/gcd.php",
