@@ -2,7 +2,7 @@
 
 <?php
 
-use function BrainGames\Gcd\get_greatest_common_divider;
+use function BrainGames\Gcd\getGreatestCommonDivider;
 
 $path1 = __DIR__ . '/../vendor/autoload.php';
 $path2 = __DIR__ . '/../../../autoload.php';
@@ -13,4 +13,4 @@ else{
     require_once $path2;
 }
 
-get_greatest_common_divider();
+getGreatestCommonDivider();

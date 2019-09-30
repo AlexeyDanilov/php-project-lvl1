@@ -16,20 +16,19 @@ function getDetails()
     return $values;
 }
 
-function progression()
+function writeMissingValueInProgression()
 {
-    $countQuestions = 3;
-    $allParameters = []; // Массив для записи в него вопросов
-    $allTruthVal = []; // Массив для записи в него правильных ответов
-    for ($i = 0; $i < $countQuestions; $i++) {
+    $countValues = 3;
+    $questionsAnswers = [];
+    for ($i = 0; $i < $countValues; $i++) {
         $parameters = getDetails();
         $parametersDouble = $parameters;
         $question = rand(0, 9);
         $parametersDouble[$question] = '..';
-        $allParameters[$i] = implode(' ', $parametersDouble);
-        $allTruthVal[$i] = $parameters[$question];
+        $questionsAnswers[$i]['question'] = implode(' ', $parametersDouble);
+        $questionsAnswers[$i]['answer'] = $parameters[$question];
     }
 
     //вызов движка приложения с переданными параметрами
-    engine(DESCRIPTION, $allParameters, $allTruthVal);
+    engine(DESCRIPTION, $questionsAnswers);
 }

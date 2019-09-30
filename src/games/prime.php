@@ -21,16 +21,15 @@ function is_prime($val)
 }
 
 
-function prime()
+function checkNumberForSimplicity()
 {
-    $countQuestions = 3;
-    $allParameters = []; // Массив для записи в него вопросов
-    $allTruthVal = []; // Массив для записи в него правильных ответов
-    for ($i = 0; $i < $countQuestions; $i++) {
-        $allParameters[$i] = rand(1, 50); // записываем вопрос в массив
-        $allTruthVal[$i] = is_prime($allParameters[$i]) ? 'yes' : 'no'; // записываем ответ в массив
+    $countValues = 3;
+    $questionsAnswers = [];
+    for ($i = 0; $i < $countValues; $i++) {
+        $questionsAnswers[$i]['question'] = rand(1, 50); // записываем вопрос в массив
+        $questionsAnswers[$i]['answer'] = is_prime($questionsAnswers[$i]['question']) ? 'yes' : 'no';
     }
 
     //вызов движка приложения с переданными параметрами
-    engine(DESCRIPTION, $allParameters, $allTruthVal);
+    engine(DESCRIPTION, $questionsAnswers);
 }

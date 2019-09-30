@@ -5,7 +5,7 @@ use function cli\prompt;
 
 
 
-function engine($description, array $question, array $truthVal)
+function engine($description, array $questionsAnswers)
 {
     line("Welcome to the Brain Games!\n");
     line("$description");
@@ -15,13 +15,13 @@ function engine($description, array $question, array $truthVal)
     $count = 0;
     $i = 0;
     while ($count < $roundsGame) {
-        line("Question: {$question[$i]}");
+        line("Question: {$questionsAnswers[$i]['question']}");
         $answer = prompt('Your answer');
-        if ($answer == $truthVal[$i]) {
+        if ($answer == $questionsAnswers[$i]['answer']) {
             line('Correct');
             $count++;
         } else {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$truthVal[$i]}'.
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$questionsAnswers[$i]['answer']}'.
                Let's try again, {$name}!");
             break;
         }

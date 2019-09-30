@@ -2,7 +2,7 @@
 
 <?php
 
-use function BrainGames\Even\even;
+use function BrainGames\Even\evenDefine;
 
 $path1 = __DIR__ . '/../vendor/autoload.php';
 $path2 = __DIR__ . '/../../../autoload.php';
@@ -14,4 +14,4 @@ else{
     require_once $path2;
 }
 
-even();
+evenDefine();
