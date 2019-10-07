@@ -4,7 +4,7 @@ namespace BrainGames\Gcd;
 
 const DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
-function calculate($val1, $val2)
+function сalculateGreatestCommonDivider($val1, $val2)
 {
     $min = min($val1, $val2);
     for ($i = $min; $i >= 1; $i--) {
@@ -14,18 +14,17 @@ function calculate($val1, $val2)
     }
 }
 
-
 function getGreatestCommonDivider()
 {
-    $countValues = 3;
     $questionsAnswers = [];
-    for ($i = 0; $i < $countValues; $i++) {
-        $value1 = rand(1, 50); // определяем первое значение
-        $value2 = rand(1, 50); // определяем второе значение
-        $questionsAnswers[$i]['question'] = "{$value1} {$value2}"; // записываем вопрос в массив
-        $questionsAnswers[$i]['answer'] = calculate($value1, $value2); // записываем ответ в массив
+    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
+        $value1 = rand(1, 50);
+        $value2 = rand(1, 50);
+        $question = "{$value1} {$value2}";
+        $answer = сalculateGreatestCommonDivider($value1, $value2);
+        $questionsAnswers[$i]['question'] = $question;
+        $questionsAnswers[$i]['answer'] = $answer;
     }
 
-    //вызов движка приложения с переданными параметрами
-    engine(DESCRIPTION, $questionsAnswers);
+    startEngine(DESCRIPTION, $questionsAnswers);
 }

@@ -1,13 +1,13 @@
 {
     "name": "alexey/php-project-lvl1",
-    "type": "object",
+    "type": "project",
     "bin": [
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
         "bin/brain-progression",
          "bin/brain-prime"
-           ],
+    ],
     "authors": [
         {
             "name": "AlexeyDanilov",
@@ -29,7 +29,7 @@
         "src/games/progression.php",
         "src/games/prime.php",
         "src/engine.php"
-	        ]
+    ]
     },
     "require": {
         "wp-cli/php-cli-tools": "^0.11.11"

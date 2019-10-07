@@ -3,31 +3,24 @@
 use function cli\line;
 use function cli\prompt;
 
+const ROUNDSCOUNT = 3;
 
-
-function engine($description, array $questionsAnswers)
+function startEngine($description, array $questionsAnswers)
 {
     line("Welcome to the Brain Games!\n");
     line("$description");
     $name = prompt('May I have your name?');
     line("Hello,%s", $name);
-    $roundsGame = 3;
-    $count = 0;
-    $i = 0;
-    while ($count < $roundsGame) {
+    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
         line("Question: {$questionsAnswers[$i]['question']}");
         $answer = prompt('Your answer');
-        if ($answer == $questionsAnswers[$i]['answer']) {
-            line('Correct');
-            $count++;
-        } else {
+        if ($answer != $questionsAnswers[$i]['answer']) {
             line("'{$answer}' is wrong answer ;(. Correct answer was '{$questionsAnswers[$i]['answer']}'.
                Let's try again, {$name}!");
-            break;
+            return;
         }
-        $i++;
+        line('Correct');
     }
-    if ($count === $roundsGame) {
-        line("Congratulations, {$name}!");
-    }
+
+    line("Congratulations, {$name}!");
 }

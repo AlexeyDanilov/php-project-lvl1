@@ -3,32 +3,32 @@
 namespace BrainGames\Progression;
 
 const DESCRIPTION = "What number is missing in the progression?";
+const LENGTHPROGRESSION = 10;
 
 function getDetails()
 {
     $step = rand(1, 10);
     $firstVal = rand(1, 100);
-    $count = 10;
     $values = [];
-    for ($i = 0, $j = $firstVal; $i < $count; $i++, $j += $step) {
-        $values[$i] = $j;
+    for ($i = 0; $i < LENGTHPROGRESSION; $i++) {
+        $values[$i] = $firstVal + $i * $step;
     }
     return $values;
 }
 
 function writeMissingValueInProgression()
 {
-    $countValues = 3;
     $questionsAnswers = [];
-    for ($i = 0; $i < $countValues; $i++) {
+    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
         $parameters = getDetails();
         $parametersDouble = $parameters;
-        $question = rand(0, 9);
-        $parametersDouble[$question] = '..';
-        $questionsAnswers[$i]['question'] = implode(' ', $parametersDouble);
-        $questionsAnswers[$i]['answer'] = $parameters[$question];
+        $indexSearchValue = rand(0, LENGTHPROGRESSION - 1);
+        $parametersDouble[$indexSearchValue] = '..';
+        $question = implode(' ', $parametersDouble);
+        $answer = $parameters[$indexSearchValue];
+        $questionsAnswers[$i]['question'] = $question;
+        $questionsAnswers[$i]['answer'] = $answer;
     }
 
-    //вызов движка приложения с переданными параметрами
-    engine(DESCRIPTION, $questionsAnswers);
+    startEngine(DESCRIPTION, $questionsAnswers);
 }

@@ -4,32 +4,31 @@ namespace BrainGames\Prime;
 
 const DESCRIPTION = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 
-function is_prime($val)
+function isPrime($value)
 {
-    if ($val < 2) {
+    if ($value < 2) {
         return false;
-    } elseif ($val === 2) {
+    } elseif ($value === 2) {
         return true;
     }
 
-    for ($i = 2; $i <= $val / 2; $i++) {
-        if ($val % $i === 0) {
+    for ($i = 2; $i <= $value / 2; $i++) {
+        if ($value % $i === 0) {
             return false;
         }
     }
     return true;
 }
 
-
 function checkNumberForSimplicity()
 {
-    $countValues = 3;
     $questionsAnswers = [];
-    for ($i = 0; $i < $countValues; $i++) {
-        $questionsAnswers[$i]['question'] = rand(1, 50); // записываем вопрос в массив
-        $questionsAnswers[$i]['answer'] = is_prime($questionsAnswers[$i]['question']) ? 'yes' : 'no';
+    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
+        $question = rand(1, 50);
+        $answer = isPrime($question) ? 'yes' : 'no';
+        $questionsAnswers[$i]['question'] = $question;
+        $questionsAnswers[$i]['answer'] = $answer;
     }
 
-    //вызов движка приложения с переданными параметрами
-    engine(DESCRIPTION, $questionsAnswers);
+    startEngine(DESCRIPTION, $questionsAnswers);
 }
