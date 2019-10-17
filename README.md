@@ -9,9 +9,7 @@ This's serie just logic-games.
 
 [![codeclimate](https://api.codeclimate.com/v1/badges/09ee5bb16440441d140e/maintainability)](https://codeclimate.com/github/AlexeyDanilov/php-project-lvl1/maintainability)
 
-[![travis](https://www.smartfile.com/blog/wp-content/uploads/2015/05/logo-travisci-wide1.jpg)](https://travis-ci.org/AlexeyDanilov/php-project-lvl1.png?branch=master,staging,production)
-
-[![asciinema](http://louis.hatier.me/blog/wp-content/uploads/2018/08/logo-asciinema.png)](https://asciinema.org/connect/3ecfcce4-732e-4f0a-aedd-03174dad7a46)
+[![Build Status](https://travis-ci.org/AlexeyDanilov/php-project-lvl1.svg?branch=master)](https://travis-ci.org/AlexeyDanilov/php-project-lvl1)
 
 [Install project + start BRAIN-GCD](https://asciinema.org/a/hZk9AOhbZbR4pbnKmoOMUwQfb)
 

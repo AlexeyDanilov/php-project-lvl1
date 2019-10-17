@@ -20,7 +20,7 @@ function isPrime($value)
     return true;
 }
 
-function checkNumberForSimplicity()
+function checkSimplicity()
 {
     $questionsAnswers = [];
     for ($i = 0; $i < ROUNDSCOUNT; $i++) {

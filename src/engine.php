@@ -12,11 +12,13 @@ function startEngine($description, array $questionsAnswers)
     $name = prompt('May I have your name?');
     line("Hello,%s", $name);
     for ($i = 0; $i < ROUNDSCOUNT; $i++) {
-        line("Question: {$questionsAnswers[$i]['question']}");
-        $answer = prompt('Your answer');
-        if ($answer != $questionsAnswers[$i]['answer']) {
-            line("'{$answer}' is wrong answer ;(. Correct answer was '{$questionsAnswers[$i]['answer']}'.
-               Let's try again, {$name}!");
+        $question = $questionsAnswers[$i]['question'];
+        $truthAnswer = $questionsAnswers[$i]['answer'];
+        line("Question: {$question}");
+        $userAnswer = prompt('Your answer');
+        if ($userAnswer != $truthAnswer) {
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$truthAnswer}'.");
+            line("Let's try again, {$name}!");
             return;
         }
         line('Correct');

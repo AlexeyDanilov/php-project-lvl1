@@ -3,29 +3,29 @@
 namespace BrainGames\Progression;
 
 const DESCRIPTION = "What number is missing in the progression?";
-const LENGTHPROGRESSION = 10;
+const LENGTH_PROGRESSION = 10;
 
-function getDetails()
+function getProgression($step, $firstValue)
 {
-    $step = rand(1, 10);
-    $firstVal = rand(1, 100);
-    $values = [];
-    for ($i = 0; $i < LENGTHPROGRESSION; $i++) {
-        $values[$i] = $firstVal + $i * $step;
+    $progression = [];
+    for ($i = 0; $i < LENGTH_PROGRESSION; $i++) {
+        $progression[$i] = $firstValue + $i * $step;
     }
-    return $values;
+    return $progression;
 }
 
-function writeMissingValueInProgression()
+function writeMissingValue()
 {
     $questionsAnswers = [];
     for ($i = 0; $i < ROUNDSCOUNT; $i++) {
-        $parameters = getDetails();
-        $parametersDouble = $parameters;
-        $indexSearchValue = rand(0, LENGTHPROGRESSION - 1);
-        $parametersDouble[$indexSearchValue] = '..';
-        $question = implode(' ', $parametersDouble);
-        $answer = $parameters[$indexSearchValue];
+        $step = rand(1, 10);
+        $firstValue = rand(1, 100);
+        $progression = getProgression($step, $firstValue);
+        $progressionDouble = $progression;
+        $hiddenValueIndex = rand(0, LENGTH_PROGRESSION - 1);
+        $progressionDouble[$hiddenValueIndex] = '..';
+        $question = implode(' ', $progressionDouble);
+        $answer = $progression[$hiddenValueIndex];
         $questionsAnswers[$i]['question'] = $question;
         $questionsAnswers[$i]['answer'] = $answer;
     }

@@ -6,10 +6,10 @@ const DESCRIPTION = "Answer \"yes\" if the number is even, otherwise answer \"no
 
 function isEven($value)
 {
-    return $value % 2 === 0 ? true : false;
+    return $value % 2 === 0;
 }
 
-function evenDefine()
+function defineEven()
 {
     $questionsAnswers = [];
     for ($i = 0; $i < ROUNDSCOUNT; $i++) {

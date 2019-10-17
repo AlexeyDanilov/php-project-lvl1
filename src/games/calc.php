@@ -19,7 +19,7 @@ function getResult($value1, $value2, $actionSymbol)
     }
 }
 
-function calculate()
+function makeCalculation()
 {
     $questionsAnswers = [];
     for ($i = 0; $i < ROUNDSCOUNT; $i++) {
