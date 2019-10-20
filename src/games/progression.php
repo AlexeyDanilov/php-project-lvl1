@@ -17,7 +17,7 @@ function getProgression($step, $firstValue, $lengthProgression)
 function writeMissingValue()
 {
     $questionsAnswers = [];
-    for ($i = 0; $i < ROUNDS_COUNT ; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $step = rand(1, 10);
         $firstValue = rand(1, 100);
         $progression = getProgression($step, $firstValue, LENGTH_PROGRESSION);

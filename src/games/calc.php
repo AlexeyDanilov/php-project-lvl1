@@ -22,7 +22,7 @@ function getResult($value1, $value2, $actionSymbol)
 function makeCalculation()
 {
     $questionsAnswers = [];
-    for ($i = 0; $i < ROUNDS_COUNT ; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $action = ACTIONS[array_rand(ACTIONS, 1)];
         $value1 = rand(1, 10);
         $value2 = rand(1, 10);

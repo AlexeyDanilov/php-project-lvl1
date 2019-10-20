@@ -23,7 +23,7 @@ function isPrime($value)
 function checkSimplicity()
 {
     $questionsAnswers = [];
-    for ($i = 0; $i < ROUNDS_COUNT ; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $question = rand(1, 50);
         $answer = isPrime($question) ? 'yes' : 'no';
         $questionsAnswers[$i]['question'] = $question;
