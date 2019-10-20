@@ -3,7 +3,7 @@
 use function cli\line;
 use function cli\prompt;
 
-const ROUNDSCOUNT = 3;
+const ROUNDS_COUNT = 3;
 
 function startEngine($description, array $questionsAnswers)
 {
@@ -11,7 +11,7 @@ function startEngine($description, array $questionsAnswers)
     line("$description");
     $name = prompt('May I have your name?');
     line("Hello,%s", $name);
-    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $question = $questionsAnswers[$i]['question'];
         $truthAnswer = $questionsAnswers[$i]['answer'];
         line("Question: {$question}");

@@ -22,12 +22,12 @@ function getResult($value1, $value2, $actionSymbol)
 function makeCalculation()
 {
     $questionsAnswers = [];
-    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
-        $actionSymbol = ACTIONS[array_rand((array)ACTIONS, 1)];
+    for ($i = 0; $i < ROUNDS_COUNT ; $i++) {
+        $action = ACTIONS[array_rand(ACTIONS, 1)];
         $value1 = rand(1, 10);
         $value2 = rand(1, 10);
-        $question = "{$value1} {$actionSymbol} {$value2}";
-        $answer = getResult($value1, $value2, $actionSymbol);
+        $question = "$value1 $action $value2";
+        $answer = getResult($value1, $value2, $action);
         $questionsAnswers[$i]['question'] = $question;
         $questionsAnswers[$i]['answer'] = $answer;
     }

@@ -12,7 +12,7 @@ function isEven($value)
 function defineEven()
 {
     $questionsAnswers = [];
-    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT ; $i++) {
         $question = rand(1, 100);
         $answer = isEven($question) ? 'yes' : 'no';
         $questionsAnswers[$i]['question'] = $question;

@@ -17,7 +17,7 @@ function сalculateGreatestCommonDivider($val1, $val2)
 function getGreatestCommonDivider()
 {
     $questionsAnswers = [];
-    for ($i = 0; $i < ROUNDSCOUNT; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT ; $i++) {
         $value1 = rand(1, 50);
         $value2 = rand(1, 50);
         $question = "{$value1} {$value2}";
